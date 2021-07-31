@@ -1,0 +1,464 @@
+//VARIABLES
+$white: #fff;
+$black: #000;
+$padding: 150px 0;
+$transition: .4s ease;
+$fonts-size: 16px;
+$blue: #0b3c5a;
+$pink: #ffa68e;
+$orange: #fce480;
+
+
+
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                M I X I N S
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+@mixin btn {
+    padding: 10px 15px;
+    color: $white;
+    border: 2px solid $white;
+    border-radius: 20px;
+    background: transparent;
+    text-shadow: 0 0 20px black;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    &:hover {
+        background: $pink;
+        transition: $transition;
+    }
+}
+
+
+
+
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                    B A S I C S T Y L E
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: $fonts-size;
+
+}
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                        T O P    B T N
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+.topBtn {
+    color: aqua;
+    font-size: 3rem;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                        H E A D E R
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+
+header {
+    background: url(../img/picture1.jpg);
+    background-size: cover;
+    height: 80vh;
+    background-position: center;
+
+    nav {
+        margin-left: 40px;
+        padding-top: 25px;
+       
+        .openMenu {
+            color: $white;
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+            margin: 20px;
+
+            @media (max-width: 700px) {
+                display: block;
+            }
+
+        }
+
+        ul.mainMenu {
+            display: flex;
+         
+            @media (max-width: 700px) {
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 10;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: #000;
+                transition: top 1s ease;
+                display: none;
+                
+            }
+
+            li {
+                margin-left: 40px;
+                list-style: none;
+
+                @media (max-width: 700px) {
+                    margin-top: 20px;
+                    
+                }
+
+                .active {
+                    border: 2px solid $white;
+                    border-radius: 20px;
+                    padding: 10px;
+                    color: $white;
+                }
+                a {
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.685);
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        background: $pink;
+                        transition: $transition;
+                        border-radius: 20px;
+                        padding: 10px;
+                    }
+                }
+
+            }
+            .closeMenu {
+                cursor: pointer;
+                color: $white;
+                font-size: 2rem;
+                display: none;
+                @media (max-width: 800px) {
+                    display: block;
+                    position: absolute;
+                    top: 50px;  
+                    left: 60px;
+                }
+            }
+        }
+
+    }
+    hgroup {
+        padding: $padding;
+        text-align: center;
+
+        @media (max-width: 700px) {
+            padding: 70px 0;
+        }
+        h1 {
+            color: $white;
+            font-size: 6rem;
+
+        @media (max-width: 700px) {
+            font-size: 4rem;
+            padding: 10px 40px;
+        }
+        }
+
+        h3 {
+            color: rgba(250,250,250, .7);
+            font-size: 1.4rem;
+            padding-bottom: 10px;
+        }
+
+        .btn-transparent {
+            @include btn;
+        }
+        .btn {
+            @include btn;
+            background: $blue;
+            margin-left: 20px;
+        }
+    }
+}
+
+
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                        S E R V I C E S
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+section.services {
+    padding: $padding;
+    .title {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .container {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        article {
+            flex: 0 0 26%;
+            margin-top: 60px;
+
+            @media (max-width: 700px) {
+                flex: 0 0 38%;
+            }
+            img {
+                width: 100%;
+                margin: auto;
+            }
+            h1 {
+                text-align: center;
+                font-size: 1.9rem;
+                margin-bottom: 10px;
+            }
+                h3 {
+                    color: rgba(0, 0, 0, 0.568);
+                    text-align: center;
+            }
+        }
+    }
+}
+
+
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                        T E A M
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+section.team {
+    background: url(../img/picture2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @media (max-width: 700px) {
+        background-attachment:  local;
+    }
+    .container {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        padding: 30vh 40px;
+
+        @media (max-width: 700px) {
+            padding: 10vh 40px;
+        }
+        color: rgba(255, 255, 255, 0.76);
+        .text {
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+                padding: 20px 0;
+            }
+
+            p {
+                font-size: 1.2rem;
+                background: rgba(0,0,0,.66);
+                padding: 30px 35px;
+                color: rgba(255, 255, 255, 0.66);
+            }
+        }
+    }
+}
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                        P O R T F O L I O
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+section.portfolio {
+    padding: $padding;
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        li {
+            flex: 0 0 10%;
+            list-style: none;
+            color: #6b6b6b;
+            
+        }
+    }
+
+    .container {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        // justify-content: space-between;
+        flex-wrap: wrap;
+
+
+        article {
+            flex: 0 0 47%;
+            margin-top: 100px;    
+            
+            @media (max-width: 700px) {
+                flex: 100%;
+                justify-content: center;
+            }
+           
+            &:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex: 0 0 30%;
+                @media (max-width: 700px) {
+                    flex: 100%;
+                    justify-content: center;
+                    
+                }
+               
+                h1 {
+                    text-align: justify;
+                }
+                p {
+                    padding: 20px 0;
+                    color: #6b6b6b;
+                    font-size: 1.2rem;
+                }
+                button {
+                    text-align: justify;
+                    @include btn();
+                    display: block;
+                    border: 2px solid black;
+                    color: #6b6b6b;
+                }
+            }
+            img {
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+
+
+/******************************************************************
+*******************************************************************
+*******************************************************************
+*******************************************************************
+                        F O O T E R
+*******************************************************************
+*******************************************************************
+*******************************************************************
+******************************************************************/
+
+footer {
+    background: linear-gradient(122deg, $blue 21%, $pink, $orange);
+    padding: 70px 0px;
+    color: $white;
+    text-shadow: 0 0 5px $black;
+
+    .title {
+        text-align: center;
+        font-size: 2.5rem;
+        padding-bottom: 80px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 68%;
+        margin: auto;
+        flex-wrap: wrap;
+        article {
+            flex: 0 0 45%;
+            @media (max-width: 700px) {
+                flex: 100%;
+            }
+                
+            &:nth-child(1) {
+                flex:0 0 30%;
+                @media (max-width: 700px) {
+                    flex: 100%;
+                }
+
+                p {
+                    color: #9b9b9b;
+                    padding: 15px 0;
+                }
+
+                button {
+                    background: transparent;
+                    @include btn();
+                }
+            }
+            &:nth-child(2) {
+                div {
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+}
